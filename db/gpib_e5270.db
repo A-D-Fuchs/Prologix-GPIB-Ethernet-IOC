@@ -101,7 +101,7 @@ record(ai, "e5270:mesI")
 	field (EGU, "I")
 }
 
-record (ao, "e5270:setFMT")
+record (ao, "setFMT")
 {
 	field (DESC, "Set format of Data")
 	field (DTYP, "stream")

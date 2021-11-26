@@ -20,7 +20,15 @@ record(ai, "b2912:mesDCI")
 	field (SCAN, "Passive")
 }
 
-
+record (ao, "setFMT")
+{
+	field (DESC, "Set format of Data")
+	field (DTYP, "stream")
+    field (OUT, "@e5270.proto setFMT $(PORT) $(G)")
+    field (PINI, "0")
+    field (TPRO, "1")
+	field (SCAN, "Passive")
+}
 
 record (stringin, "b2912:idn")
 {
