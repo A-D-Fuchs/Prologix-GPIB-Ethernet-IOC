@@ -1,0 +1,92 @@
+ReplyTimeout = 2000;
+InTerminator = CR LF;
+
+#Reset SMU
+reset {
+	out "*RST";
+}
+
+
+#Get Identifier of device and ignore any carrige returns \r and new lines \n
+idn {
+	out "*IDN?";
+#	in "%[^\r\n]"; #does not match CR LF but everything else
+	in "%1000c"; #allows upto 1000 characters of string and white spaces
+	ExtraInput = Ignore;
+}
+
+
+#Get 4 Errors in Errlog Buffer
+getErr {
+	out "ERR?";
+	in "%[^\r\n]";
+	ExtraInput = Ignore;
+}
+
+
+#Enable Channel, \$1 is the channel that should be enabled, 
+#required to be able to set voltage or current
+enCh {
+	out "CN %i";
+}
+
+
+#Disable Channel with number \$1
+disCh {
+	out "CL %i";
+}
+
+
+#Force voltage output: 
+#1 is the Channel/Slot, 0 is auto ranging, %f is the voltage value in V
+#the current compliance is set to 1e-6A
+setCh1V {
+	out "DV 1,0,%f,1e-6";
+}
+
+
+#Force 0V at channel output \$1 is the channel to set to 0V
+force0V {
+	out "DZ %i";
+}
+
+
+#Force current output: 
+#1 is the Channel/Slot, 0 is auto ranging,  1 is the voltage value in V
+#Voltage compliance is set to 1V
+setCh1I {
+	out "DI 1,0,%.9f,10";
+}
+
+#Measure Voltage single shot, channel number %i
+
+mesV {
+	out "TV 1";
+	in "%f";
+	ExtraInput = Ignore;
+}
+
+
+
+#Measure Current single shot, channel number %i
+
+mesI {
+	out "TI 1";
+	in "%f";
+	ExtraInput = Ignore;
+}
+
+#Set data format to 12 characters and only data
+setFMT {
+	out "FMT 2,0";
+}
+
+
+#write arbitrary string to SMU
+ws {
+	out "%s";
+	in "%[\r\n]";
+	ExtraInput = Ignore;
+}
+
+

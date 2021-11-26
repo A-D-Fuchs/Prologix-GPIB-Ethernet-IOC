@@ -1,0 +1,124 @@
+record(ao, "e5270:setV")
+{
+    field (DESC, "Set Voltage")
+    field (DTYP, "stream")
+    field (OUT,  "@e5270.proto setCh1V $(PORT) $(G)")
+    field (PREC, "4")
+    field (PINI, "NO")
+	field (TPRO, "1")
+	field (FLNK, "e5270:mesV.PROC")
+	field (EGU, "V")
+}
+
+
+record(ao, "e5270:setI")
+{
+    field (DESC, "Set current")
+    field (DTYP, "stream")
+    field (OUT,  "@e5270.proto setCh1I $(PORT) $(G)")
+    field (PREC, "4")
+    field (PINI, "NO")
+    field (TPRO, "1")
+	field (FLNK, "e5270:mesI.PROC")
+	field (EGU, "I")
+}
+
+
+record(ao, "e5270:force0V")
+{
+    field (DESC, "force Voltage of channel (=VAL) to 0V")
+    field (DTYP, "stream")
+    field (OUT,  "@e5270.proto force0V $(PORT) $(G)")
+    field (PINI, "NO")
+    field (TPRO, "1")
+	field (EGU, "V")
+}
+
+
+record(ao, "e5270:Enable")
+{
+    field (DESC, "Enable Channel")
+    field (DTYP, "stream")
+    field (OUT,  "@e5270.proto enCh $(PORT) $(G)")
+    field (PINI, "0")
+    field (TPRO, "1")
+    field (SCAN, "Passive")
+}
+
+
+record(ao, "e5270:Disable")
+{
+    field (DESC, "Disable Channel")
+    field (DTYP, "stream")
+    field (OUT,  "@e5270.proto disCh $(PORT) $(G)")
+    field (PINI, "0")
+    field (TPRO, "1")
+    field (SCAN, "Passive")
+}
+
+
+record(stringin, "e5270:idn")
+{
+    field (DESC, "Identify SMU E5270")
+    field (DTYP, "stream")
+    field (INP,  "@e5270.proto idn $(PORT) $(G)")
+    field (PINI, "NO")
+    field (TPRO, "1")
+}
+
+
+record(stringin, "e5270:err")
+{
+    field (DESC, "Identify SMU E5270")
+    field (DTYP, "stream")
+    field (INP,  "@e5270.proto getErr $(PORT) $(G)")
+    field (PINI, "NO")
+    field (TPRO, "1")
+}
+
+
+record(ai, "e5270:mesV")
+{
+    field (DESC, "Measure Voltage")
+	field (DTYP, "stream")
+    field (INP, "@e5270.proto mesV $(PORT) $(G) CCP")
+    field (PINI, "0")
+    field (TPRO, "1")
+	field (SCAN, "Passive")
+	field (MDEL, "0.01")
+	field (EGU, "V")
+}
+
+
+record(ai, "e5270:mesI")
+{
+    field (DESC, "Measure Voltage")
+	field (DTYP, "stream")
+    field (INP, "@e5270.proto mesI $(PORT) $(G) CCP")
+    field (PINI, "0")
+    field (TPRO, "1")
+	field (SCAN, "Passive")
+	field (EGU, "I")
+}
+
+record (ao, "setFMT")
+{
+	field (DESC, "Set format of Data")
+	field (DTYP, "stream")
+    field (OUT, "@e5270.proto setFMT $(PORT) $(G)")
+    field (PINI, "1")
+    field (TPRO, "1")
+	field (SCAN, "Passive")
+}
+
+
+record (stringout, "e5270:wstr")
+{
+	field (DESC, "write string to SMU")
+	field (DTYP, "stream")
+    field (OUT, "@e5270.proto ws L0 17")
+    field (PINI, "0")
+    field (TPRO, "1")
+	field (SCAN, "Passive")
+	field (OMSL, "0")
+}
