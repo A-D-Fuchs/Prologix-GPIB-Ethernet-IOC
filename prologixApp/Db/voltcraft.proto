@@ -1,5 +1,4 @@
 #set Voltage
-#change to proto so test git branches and merge
 setV {
 	out "%s";
 	in "%s";
