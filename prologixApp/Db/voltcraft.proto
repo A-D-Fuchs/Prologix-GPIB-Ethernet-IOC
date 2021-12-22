@@ -1,0 +1,5 @@
+#set Voltage
+setV {
+	out "%s";
+	in "%s";
+}
