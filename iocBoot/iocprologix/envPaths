@@ -1,5 +1,5 @@
 epicsEnvSet("IOC","iocprologix")
-epicsEnvSet("TOP","/home/epics/LAPApplications/logix")
+epicsEnvSet("TOP","/home/epics/FHI/Prologix-GPIB-Ethernet-IOC")
 epicsEnvSet("EPICS_BASE","/home/epics/EPICS/epics-base")
 epicsEnvSet("SUPPORT","/home/epics/EPICS/epics-support")
 epicsEnvSet("IPAC","/home/epics/EPICS/epics-support/ipac")

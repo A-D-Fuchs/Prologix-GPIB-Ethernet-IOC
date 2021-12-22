@@ -333,6 +333,7 @@ epicsShareExtern reg_func pvar_func_AsynDriverInterfaceRegistrar,
     pvar_func_asynInterposeEosRegister,
     pvar_func_asynInterposeFlushRegister, pvar_func_asynRegister,
     pvar_func_dbndInitialize, pvar_func_decInitialize,
+    pvar_func_drvAsynSerialPortRegisterCommands,
     pvar_func_drvPrologixGPIB_RegisterCommands,
     pvar_func_editSseqRegistrar, pvar_func_interpRegister,
     pvar_func_rsrvRegistrar, pvar_func_streamRegistrar,
@@ -437,7 +438,7 @@ static struct iocshVarDef vardefs[] = {
 int prologix_registerRecordDeviceDriver(DBBASE *pbase)
 {
     static int executed = 0;
-    const char *bldTop = "/home/epics/LAPApplications/logix";
+    const char *bldTop = "/home/epics/FHI/Prologix-GPIB-Ethernet-IOC";
     const char *envTop = getenv("TOP");
 
     if (envTop && strcmp(envTop, bldTop)) {
@@ -473,6 +474,7 @@ int prologix_registerRecordDeviceDriver(DBBASE *pbase)
     runRegistrarOnce(pvar_func_asynRegister);
     runRegistrarOnce(pvar_func_dbndInitialize);
     runRegistrarOnce(pvar_func_decInitialize);
+    runRegistrarOnce(pvar_func_drvAsynSerialPortRegisterCommands);
     runRegistrarOnce(pvar_func_drvPrologixGPIB_RegisterCommands);
     runRegistrarOnce(pvar_func_editSseqRegistrar);
     runRegistrarOnce(pvar_func_interpRegister);

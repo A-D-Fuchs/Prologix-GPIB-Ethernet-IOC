@@ -21,12 +21,14 @@ prologix_DBD += calc.dbd
 prologix_DBD += drvPrologixGPIB.dbd
 prologix_DBD += stream.dbd
 prologix_DBD += asyn.dbd
+prologix_DBD += drvAsynSerialPort.dbd
 # Add all the support libraries needed by this IOC
 #prologix_LIBS += xxx
 prologix_LIBS += calc
 prologix_LIBS += drvPrologixGPIB
 prologix_LIBS += stream
 prologix_LIBS += asyn
+
 # prologix_registerRecordDeviceDriver.cpp derives from prologix.dbd
 prologix_SRCS += prologix_registerRecordDeviceDriver.cpp
 

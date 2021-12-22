@@ -7,6 +7,8 @@ include $(TOP)/configure/CONFIG
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
 #DB += xxx.db
+DB += voltcraft.db
+DB += voltcraft.proto
 DB += gpib_win.db
 DB += gpib_e5270.db
 DB += e5270.proto

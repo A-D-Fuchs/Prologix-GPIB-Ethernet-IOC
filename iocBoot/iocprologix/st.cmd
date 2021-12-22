@@ -26,13 +26,20 @@ asynSetTraceMask("L0_TCP", -1, 0x9)
 asynSetTraceIOMask("L0", $(A), 0x2)
 asynSetTraceMask("L0", $(A), 0x9)
 
+drvAsynSerialPortConfigure("VOLTCRAFT01","/dev/ttyS1",0,0,0)
+asynSetOption("VOLTCRAFT01",1, "baud", "9600")
+asynSetOption("VOLTCRAFT01",1, "bits", "8")
+asynSetOption("VOLTCRAFT01",1, "parity", "none")
+asynSetOption("VOLTCRAFT01",1, "stop", "1")
+
 ## Load record instances
+dbLoadRecords("db/voltcraft.db", "PORT = VOLTCRAFT01")
 #dbLoadRecords("db/xxx.db","user=epics")
-dbLoadRecords("db/gpib_win.db","P=$(IOC):,R=Test:,PORT=L0,A=11,B=23")
-dbLoadRecords("db/gpib_e5270.db","PORT=L0,G=17")
-dbLoadRecords("db/gpib_34401.db","PORT=L0,G=22")
-dbLoadRecords("db/gpib_b2912.db","PORT=L0,G=23")
-dbLoadRecords("db/gpib_k220.db","PORT=L0,G=3")
+#dbLoadRecords("db/gpib_win.db","P=$(IOC):,R=Test:,PORT=L0,A=11,B=23")
+#dbLoadRecords("db/gpib_e5270.db","PORT=L0,G=17")
+#dbLoadRecords("db/gpib_34401.db","PORT=L0,G=22")
+#dbLoadRecords("db/gpib_b2912.db","PORT=L0,G=23")
+#dbLoadRecords("db/gpib_k220.db","PORT=L0,G=3")
 cd "${TOP}/iocBoot/${IOC}"
 iocInit
 
