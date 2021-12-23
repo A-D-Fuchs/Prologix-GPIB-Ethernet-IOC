@@ -2,10 +2,11 @@ record (stringout, "voltcraft:setV")
 {
 	field (DESC, "write string to voltcraft")
 	field (DTYP, "stream")
-    field (OUT, "@voltcraft.proto setV VOLTCRAFT01 /dev/ttyS1")
+    field (OUT, "@voltcraft.proto setV $(PORT) $(TTY)")
     field (PINI, "0")
     field (TPRO, "1")
 	field (SCAN, "Passive")
 	field (OMSL, "0")
 	field (VAL, "VOLT003")
 }
+#want to test git repo
