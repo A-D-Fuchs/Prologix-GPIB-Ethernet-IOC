@@ -82,8 +82,8 @@
     /home/epics/EPICS/epics-support/asyn/dbd/devAsynInt64Array.dbd \
     /home/epics/EPICS/epics-support/asyn/dbd/devAsynInt64TimeSeries.dbd \
     /home/epics/EPICS/epics-support/asyn/dbd/devAsynInt64Misc.dbd \
-    /home/epics/EPICS/epics-support/StreamDevice/dbd/stream.dbd \
-    /home/epics/EPICS/epics-support/asyn/dbd/drvAsynSerialPort.dbd
+    /home/epics/EPICS/epics-support/asyn/dbd/drvAsynSerialPort.dbd \
+    /home/epics/EPICS/epics-support/StreamDevice/dbd/stream.dbd
 
 /home/epics/EPICS/epics-base/dbd/base.dbd:
 /home/epics/EPICS/epics-base/dbd/menuGlobal.dbd:
@@ -169,6 +169,6 @@
 /home/epics/EPICS/epics-support/asyn/dbd/devAsynInt64Array.dbd:
 /home/epics/EPICS/epics-support/asyn/dbd/devAsynInt64TimeSeries.dbd:
 /home/epics/EPICS/epics-support/asyn/dbd/devAsynInt64Misc.dbd:
-/home/epics/EPICS/epics-support/StreamDevice/dbd/stream.dbd:
 /home/epics/EPICS/epics-support/asyn/dbd/drvAsynSerialPort.dbd:
+/home/epics/EPICS/epics-support/StreamDevice/dbd/stream.dbd:
 ../O.Common/prologix.dbd: ../Makefile
