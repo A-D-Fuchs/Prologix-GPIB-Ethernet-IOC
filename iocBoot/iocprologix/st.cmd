@@ -11,7 +11,8 @@ epicsEnvSet("P", "$(P=Prologix:)");
 epicsEnvSet("R", "$(R=Test:)");
 epicsEnvSet("A", "$(A=5)");
 epicsEnvSet("B", "$(B=23)");
-epicsEnvSet("TTY", "$(TTY =/dev/bus/usb/001/001)")
+epicsEnvSet("TTY", "$(TTY =/dev/bus/usb/001/002)")
+#epicsEnvSet("TTY", "$(TTY =/dev/ttyS1)")
 cd "${TOP}"
 
 ## Register all support components
